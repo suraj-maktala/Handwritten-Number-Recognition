@@ -98,7 +98,11 @@ if canvas_result.image_data is not None:
     img = cv2.cvtColor(img, cv2.COLOR_RGBA2GRAY)
     
     # --- Calculate Center of mass and center adjust the image --- #
-    cy, cx = center_of_mass(img)
+    if np.sum(img) != 0:
+        cy, cx = center_of_mass(img)
+    else:
+        cy, cx = (np.nan, np.nan)
+    
     actual = (img.shape[1]//2,img.shape[0]//2)
     diffx = actual[0] - cx
     diffy = actual[1] - cy
