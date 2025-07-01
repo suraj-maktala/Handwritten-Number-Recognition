@@ -9,7 +9,7 @@ This project implements a CNN-based handwritten digit recognizer trained on the 
 ├── main.ipynb &emsp;&ensp;&nbsp;&ensp;&nbsp;    # Jupyter notebook for training the CNN <br/>
 ├── inference.py  &emsp;&nbsp;&ensp;&nbsp;   # Streamlit app for digit drawing and recognition <br/>
 ├── requirements.txt &nbsp; # Required Python dependencies <br/>
-├── LICENSE &emsp;&emsp;&emsp;&emsp;# Required Python dependencies <br/>
+├── LICENSE &emsp;&emsp;&emsp;&emsp;# MIT Licence <br/>
 └── README.md   &emsp;&emsp;     # You're here <br/>
 
 ## 🛠️ Tech Stack
