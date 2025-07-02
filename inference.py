@@ -49,10 +49,11 @@ class Number_Recognition_Model(nn.Module):
         return logits
 
 ### Model Instantiation ###
-def load_model():
+def load_model(version):
     input_features = (1,28,28)
     output_labels = 10
     model = Number_Recognition_Model(input_features, output_labels)
+    model.load_state_dict(torch.load(f"models/model_weights_{version}.pth", weights_only=True,map_location=torch.device('cpu')))
     model = model.to(device)
 
     return model
@@ -72,8 +73,7 @@ def get_roi_bounds(img):
     return y_min, y_max, x_min, x_max
 
 version = "v4"
-model = load_model()
-model.load_state_dict(torch.load(f"models/model_weights_{version}.pth", weights_only=True))
+model = load_model(version)
 
 
 ### StreamLit Code ###
